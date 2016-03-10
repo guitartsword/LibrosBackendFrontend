@@ -1,0 +1,22 @@
+<div ng-controller="HomeController center-block">
+    <div ng-show="isAdmin() || isRegular()">
+      <table class="table table-striped">
+        <tr>
+          <th>Titulo</th>
+          <th>Año</th>
+          <th>Editorial</th>
+          <th>Autor</th>
+          <th>Opciones</th>
+        </tr>
+        <tr ng-repeat="libro in libros">
+          <td>{{book.title}}</td>
+          <td>{{book.year}}</td>
+          <td>{{book.editorial}}</td>
+          <td>{{book.author}}</td>
+          <td>
+            <button type="button" class="btn btn-primary">Agregar</button>
+            <button type="button" class="btn btn-danger">Eliminar</button></td>
+          </tr>
+      </table>
+    </div>
+</div>
