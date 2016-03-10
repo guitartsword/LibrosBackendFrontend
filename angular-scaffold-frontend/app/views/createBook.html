@@ -1,0 +1,9 @@
+<div ng-controller="BookController">
+    <div ng-show="isAdmin() || isRegular()">
+    	<input type="text" class="Book" placeholder="Titulo" ng-model="libro.title"></br>
+    	<input type="number" class="Book" placeholder="Año" ng-model="libro.year"></br>
+    	<input type="text" class="Book" placeholder="Editorial" ng-model="libro.editorial"></br>
+    	<input type="text" class="Book" placeholder="Autor" ng-model="libro.author"></br>
+  		<button type="button" ng-click="addBook('home')" class="btn btn-success">Agregar</button>
+    </div>
+</div>

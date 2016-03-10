@@ -1,6 +1,8 @@
-<div ng-controller="HomeController center-block">
+<div ng-controller="BookController">
     <div ng-show="isAdmin() || isRegular()">
-      <table class="table table-striped">
+      <button type="button" ng-click="getBooks()" class="btn btn-success">Cargar</button>
+      <button type="button" ng-click="changeView('addBook')" class="btn btn-success">Agregar</button>
+      <table id="libros" class="table table-striped">
         <tr>
           <th>Titulo</th>
           <th>Año</th>
@@ -9,13 +11,13 @@
           <th>Opciones</th>
         </tr>
         <tr ng-repeat="libro in libros">
-          <td>{{book.title}}</td>
-          <td>{{book.year}}</td>
-          <td>{{book.editorial}}</td>
-          <td>{{book.author}}</td>
+          <td>{{libro.title}}</td>
+          <td>{{libro.year}}</td>
+          <td>{{libro.editorial}}</td>
+          <td>{{libro.author}}</td>
           <td>
-            <button type="button" class="btn btn-primary">Agregar</button>
-            <button type="button" class="btn btn-danger">Eliminar</button></td>
+            <button ng-model="libros"type="button" class="btn btn-primary" ng-click="changeView2('modBook',libro)">Modificar</button>
+            <button type="button" class="btn btn-danger" ng-click="delBook(libro)">Eliminar</button></td>
           </tr>
       </table>
     </div>

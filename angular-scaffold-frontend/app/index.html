@@ -34,12 +34,11 @@
         <h1>Bienvenido {{$sessionStorage.currentUser.username}}</h1>
       </div>
     </div>
-    <div class="container">
+    <div id='div' class="container">
       <div ui-view></div>
   </div>
-  </body>
 
-  <!-- bower:js -->
+  </body>
 
   <script src="/jquery/dist/jquery.js"></script>
 
@@ -53,14 +52,12 @@
 
   <script src="/bootstrap/dist/js/bootstrap.js"></script>
 
-  <!-- endinject -->
-
   <script src="app.js"></script>
 
-  <!-- inject:js -->
-  <script src="scripts/controllers/HomeController.js"></script>
+  <script src="scripts/controllers/UpdateController.js"></script>
+  <script src="scripts/controllers/BookController.js"></script>
   <script src="scripts/controllers/navbarController.js"></script>
   <script src="scripts/services/authService.js"></script>
-  <script src="scripts/services/HomeService.js"></script>
-  <!-- endinject -->
+  <script src="scripts/services/BookService.js"></script>
+
 </html>

@@ -1,0 +1,9 @@
+<div ng-controller="BookController">
+    <div ng-show="isAdmin() || isRegular()">
+    	<input name = "title" type="text" class="Book" placeholder="Title" ng-model="libro.title"></br>
+    	<input type="number" class="Book" placeholder="Year" ng-model="libro.year"></br>
+    	<input type="text" class="Book" placeholder="Editorial" ng-model="libro.editorial"></br>
+    	<input type="text" class="Book" placeholder="Autor" ng-model="libro.author"></br>
+  		<button type="button" ng-click="updateBook('home')" class="btn btn-primary">Modificar</button>
+    </div>
+</div>

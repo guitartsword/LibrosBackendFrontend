@@ -122,6 +122,10 @@ exports.createLibro = {
     scope: ['admin']
   },
   handler: function(request,reply){
+    console.log("YA ENTRE");
+    console.log("YA ENTRE");
+    console.log("YA ENTRE");
+    console.log("YA ENTRE");
     var newLibro = new libro({
       title: request.payload.title,
       editorial: request.payload.editorial,

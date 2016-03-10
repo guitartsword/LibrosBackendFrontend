@@ -1,5 +1,6 @@
-angular.module('AngularScaffold.Services').factory('HomeService', ['$http',
+angular.module('AngularScaffold.Services').factory('BookService', ['$http',
 	function($http){
+		var libro = {};
 		$http.defaults.withCredentials = true;
 		var baseUrl = 'http://localhost:8000/';
 		return {
@@ -7,13 +8,21 @@ angular.module('AngularScaffold.Services').factory('HomeService', ['$http',
 				return $http.get(baseUrl + "v1/libros");
 			},
 			CreateBook: function(payload){
-				return $http.post(baseURl + "v1/libros");
+				return $http.post(baseUrl + "v1/libros",payload);
 			},
 			UpdateBook: function(payload){
-				return $http.put(baseURl + "v1/libros/{librosId}");
-			}
+				console.log(libro._id);
+				return $http.put(baseUrl + "v1/libros/"+libro._id,payload);
+			},
 			DeleteBook: function(){
-				return $http.delete(baseURl + "v1/libros/{librosId}");
+				return $http.delete(baseUrl + "v1/libros/"+libro._id);
+			},
+			SetCurrentBook: function(currentLibro){
+				libro = currentLibro;
+				console.log(libro._id);
+			},
+			GetCurrentBook: function(){
+				return libro;
 			}
 		};
 	}
